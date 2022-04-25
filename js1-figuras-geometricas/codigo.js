@@ -1,22 +1,36 @@
-//const areaCuadrado = ladoCuadrado * ladoCuadrado;
-
-function perimetroCuadrado (lado) {
-    return lado * 4 + "cm"
+function calcularPerimetroCuadrado() {
+    let input = document.getElementById("input-square")
+    let value = input.value;
+    perimetroCuadrado(value)
 }
 
+function perimetroCuadrado(lado){
+    let resultado = document.getElementById("perimeter-square-result")
+    let perimetroCuadrado = lado * 4;
+    resultado.innerHTML = perimetroCuadrado;    
+}
+
+function calcularAreaCuadrado() {
+    let input = document.getElementById("input-square")
+    let value = input.value;
+    areaCuadrado(value)
+}
 function areaCuadrado (lado) {
-    return lado * lado + "cm2"
-}
-//Calculo del triangulo//
-
-console.log("A partir de ahora, los calculos del triangulo")
-
-function perimetroTriangulo (lado1, lado2, base) {
-    return lado1 + lado2 + base
+    let resultado = document.getElementById("area-square-result")
+    let areaCuadrado = lado * lado;
+    resultado.innerHTML = areaCuadrado;
 }
 
-function areaTriangulo (baseTriangulo, alturaTriangulo){
-    return (baseTriangulo * alturaTriangulo) / 2;
+function calcularAlturaTrianguloIsoceles(){
+    let base_longitude = document.getElementById("input-base-triangle")
+    let side_longitude = document.getElementById("input-side-triangle")
+    let base_value = base_longitude.value;
+    let side_value = side_longitude.value;
+    alturaTrianguloIsoceles(base_value, side_value)
 }
 
-//Calculo del circulo//
+function alturaTrianguloIsoceles(base, lado){
+    let resultado = document.getElementById("triangle-isoceles-result")
+    let height_isoceles_triangle = Math.sqrt((lado * lado) - (base * base) / 4)
+    resultado.innerHTML = "El resultado es " + height_isoceles_triangle;
+}
